@@ -10,12 +10,31 @@
     justify-content: center;
 }
 
+.welcome-text {
+    width: 100%;
+    height: 10%;
+    font-family: "Quicksand", sans-serif;
+}
+
 .title {
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
+    color: black;
     font-weight: 500;
     font-size: 50px;
     font-style: normal;
+    display: flex;
+    padding: 20px;
+    height:80px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+.sticky + .background-container {
+    margin-top: 80px;
 }
 
 .head-nav-bar {
@@ -24,14 +43,45 @@
     font-weight: 500;
     font-style: normal;
     display: flex;
+    
     justify-content: space-between;
     align-items: center;
-    height: 10%;
-    width:100%;
+    height: 50px;
+    width:50%;
     padding: 20px;
-    
 }
 
+.background-container {
+    height: 800px;
+    width: 100%;
+    display: flex; 
+    z-index: -5;
+    justify-content:center;
+    position: relative;
+    align-items: flex-end;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    
+    /* top: 200px; */
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    filter: brightness(50%);
+    transition: opacity 1s ease-in-out;
+}
+
+.showing {
+    filter: brightness(50%);
+    opacity: 1;
+}
 
 .container img {
     width: 100%;
@@ -39,12 +89,37 @@
     object-fit:cover;
 }
 
-.center-container {
-    padding: 40px;
-    width: 100%;
-    height: fit-content;
-    align-items: center;
+.orange {
+    background-color: #ffac41;
 }
+
+.white {
+    background-color: white;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.center-container-nav-bar {
+    /* padding: 40px; */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* position: relative; */
+}
+
+.center-container {
+    /* padding: 40px; */
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    /* position: relative; */
+}
+
+
 
 .about-me-sec {
    height: 600px;
@@ -55,13 +130,54 @@
 }
 
 .about-me-desc {
-    width: 1000px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+    width: fit-content;
+    height: fit-content;
+    position:relative;
+    text-align: center;
     word-wrap: break-word;
+    padding: 40px;
+}
+
+.left {
+    justify-content: left;
+}
+
+.right {
+    justify-content: right;
+}
+
+.about-me-box {
+    width: 100%;
+    height: 400px;
+    align-items: center;
+    display: flex;
+}
+
+.about-me-box-contents {
+    width: 80%;
+    border-radius: 15px;
+    height: 60%;
+    opacity: .6;
+    background-color: orange;
+    display: flex;
+    
+}
+
+.about-me-box-text {
+    padding: 20px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+    color: white;
 }
 
 .option {
     width: 8%;
     padding: 10px;
+    color: black;
     height: max-content;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }

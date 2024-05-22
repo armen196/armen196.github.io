@@ -1,23 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const fadeDuration = 500;
-    const fadeDelay = 2000;
+let backgrounds = document.querySelectorAll(".background");
+let imageIndex = 0;
+function swap() {
+    backgrounds[imageIndex].classList.remove("showing");
+    imageIndex = (imageIndex+1) % 4;
+    backgrounds[imageIndex].classList.add("showing");
+}
+var navBar = document.getElementById("navBar");
+var stick = navBar.offsetTop;
 
-    const pictures = ['Images/Sloth_1.jpg', 'Images/Sloth_2.jpg', 'Images/Sloth_3.jpg'];
-
-    function fadeOut() {
-        var pic = document.getElementById("Picture");
-        pic.style.opacity = 1; // Set initial opacity to 1 (fully visible)
-        
-        var fadeInterval = setInterval(function () {
-            var opacity = pic.style.opacity;
-            if (opacity > 0) {
-                pic.style.opacity-=.01; 
-            } else {
-                clearInterval(fadeInterval);
-                
-            }
-        }, 10);
+window.onscroll = function () {
+    if (window.scrollY > stick) {
+        navBar.classList.add("sticky")
+    } else {
+        navBar.classList.remove("sticky");
     }
-    
-    setInterval(fadeOut, 10000);
-});
+}
+setInterval(swap, 6000);
