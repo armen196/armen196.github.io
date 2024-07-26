@@ -9,14 +9,14 @@
 </head>
 
 <body> <!-- Start of body -->
-    
+
     <div class="center-container">
         <div class="title">Arman Yaralian</div>
     </div>
     <div class="center-container-nav-bar white" id="navBar">
         <div class="head-nav-bar">
             <!-- <div class="title">Arman Yaralian</div> -->
-            <div class="option">About Me</div>
+            <div class="option" onclick="scrollToTarget('about-me')">About Me</div>
             <div class="option">Projects</div>
             <div class="option">Education</div>
             <div class="option">Reach Me</div>
@@ -28,33 +28,112 @@
         <img class="background" src="Images/Pic_2.jpg" />
         <img class="background" src="Images/Pic_3.jpg" />
         <img class="background" src="Images/Pic_4.jpg" />
-        
+
         <div class="about-me-desc">
             My name is Arman Yaralian, and I am an aspiring software engineer based out of Bellingham Washington.
             I graduated from Western Washington University with a 3.29 GPA, and gained many useful techinical skills
-            such as c, c++, java, python, DNS servers, android development (Kotlin), Cobal, relational algebra, algorithms,
-            and much more.  
+            such as c, c++, java, python, DNS servers, android development (Kotlin), Cobal, relational algebra,
+            algorithms,
+            and much more.
         </div>
-        
+
     </div>
-    
-    <div class="about-me-box right">
-        <div class="about-me-box-contents">
-            <div class="about-me-box-text">
-                asdf
+    <div class="about-me-container" id="about-me">
+        <div class="title" style="display: block;">About Me</div>
+        <div class="about-me-box right">
+            <div class="about-me-box-picture">
+                <img src="Images/OliveGarden.jpg">
+            </div>
+            <div class="about-me-box-contents">
+                <div class="about-me-box-text">
+                    During my time in college, I worked as a bartender and server at the Bellingham Olive Garden.
+                    This experience allowed me to hone many of my core strengths, including communication, customer
+                    service, adaptability, and organization. In this fast-paced environment, I developed exceptional
+                    time management skills, as I consistently worked upwards of thirty hours a week while maintaining
+                    a full course load. Balancing these responsibilities required a high level of efficiency and
+                    dedication,
+                    which has prepared me well for future challenges. Additionally, my role involved interacting with a
+                    diverse
+                    range of customers, further enhancing my ability to handle various situations with professionalism
+                    and poise.
+                </div>
+            </div>
+        </div>
+        <div class="about-me-box left">
+            <div class="about-me-box-contents">
+                <div class="about-me-box-text">
+                    Woodworking has been a passionate hobby of mine since I was 13 years old. Over the years, I've
+                    crafted a variety of
+                    items, from coffee tables and desks to shelves and planters. There's something incredibly rewarding
+                    about seeing a
+                    blueprint come to life and transform into a functional and beautiful piece. Through this hobby, I
+                    have developed a
+                    keen attention to detail, ensuring every cut and joint is precise. Patience has also been a crucial
+                    skill I've honed,
+                    as woodworking often requires careful planning and time-consuming effort. Additionally, creativity
+                    has played a significant
+                    role, pushing me to design unique and innovative pieces. These skills have seamlessly translated
+                    into my coding projects,
+                    leading to more precise, well-thought-out, and innovative solutions. Overall, woodworking has
+                    enriched both my personal and
+                    professional life, enhancing my ability to produce high-quality work.
+                </div>
+            </div>
+            <div class="about-me-box-picture">
+                <img src="Images/Table_1.jpg" />
+            </div>
+        </div>
+        <div class="about-me-box right">
+            <div class="about-me-box-picture">
+                <img src="Images/Helldivers.jpg">
+            </div>
+            <div class="about-me-box-contents">
+                <div class="about-me-box-text">
+                    As any true software engineer might be, I am an avid gamer. Growing up on Halo 2 and 3 on legendary
+                    mode and participating in our weekly Super Smash Brothers tournaments, video games have become an
+                    integral part of who I am today. Recently, my game of choice has been Helldivers 2 and
+                    Counter-Strike, although some of my all-time favorites include Factorio (which I highly recommend if
+                    you haven't heard of it) and Doom 2016. Beyond being an excellent way to pass time, video games have
+                    taught me numerous valuable skills. These include a deep level of communication, effective teamwork,
+                    patience, and leadership. The immersive and challenging nature of gaming has not only been enjoyable
+                    but has also enriched my personal and professional development.
+                </div>
             </div>
         </div>
     </div>
-    <div class="about-me-box left">
-        <div class="about-me-box-contents">
-            <div class="about-me-box-text">
-                asdf
+    <div class="projects-container">
+        <div class="project-box">
+            <div class="project-box-pic">
+                <img src="Images/Helldivers.jpg">
+            </div>
+            <div class="project-box-space"/>
+                <div class="project-title">
+                    Racquetball App
+                </div>
+            </div>
+            <div class="project-box-desc"/>
+            As any true software engineer might be, I am an avid gamer. Growing up on Halo 2 and 3 on legendary
+            mode and participating in our weekly Super Smash Brothers tournaments, video games have become an
+            integral part of who I am today. Recently, my game of choice has been Helldivers 2 and
+            Counter-Strike, although some of my all-time favorites include Factorio (which I highly recommend if
+            you haven't heard of it) and Doom 2016. Beyond being an excellent way to pass time, video games have
+            taught me numerous valuable skills. These include a deep level of communication, effective teamwork,
+            patience, and leadership. The immersive and challenging nature of gaming has not only been enjoyable
+            but has also enriched my personal and professional development.
             </div>
         </div>
+        <div class="project-box black">
+            
+        </div>
+        <div class="project-box black">
+            
+        </div>
     </div>
-    
+    </div>
+
+
     <script src="portfolio.js"></script>
-    
+
 </body> <!-- End of body -->
 
 </html>
