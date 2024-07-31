@@ -9,6 +9,7 @@ var navBar = document.getElementById("navBar");
 var descBoxes = document.querySelectorAll('.about-me-box');
 var descBoxPos = 0;
 var stick = navBar.offsetTop;
+let options = document.getElementsByClassName("option");
 
 
 window.onscroll = function () {
@@ -35,7 +36,13 @@ window.onscroll = function () {
         }
     });
 }
-function scrollToTarget(target) {
-    document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
+function scrollToTarget(target, adj=0) {
+    //document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
+    const yOffset = 200;
+    const el = document.getElementById(target);
+    window.scrollTo({
+        top: el.getBoundingClientRect().top + window.scrollY + adj,
+        behavior: 'smooth'
+    });
 }
 setInterval(swap, 6000);

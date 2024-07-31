@@ -16,8 +16,8 @@
     <div class="center-container-nav-bar white" id="navBar">
         <div class="head-nav-bar">
             <!-- <div class="title">Arman Yaralian</div> -->
-            <div class="option" onclick="scrollToTarget('about-me')">About Me</div>
-            <div class="option">Projects</div>
+            <div class="option" onclick="scrollToTarget('about-me', -60)">About Me</div>
+            <div class="option" onclick="scrollToTarget('projects', -100)">Projects</div>
             <div class="option">Education</div>
             <div class="option">Reach Me</div>
         </div>
@@ -101,33 +101,37 @@
             </div>
         </div>
     </div>
-    <div class="projects-container">
-        <div class="project-box">
-            <div class="project-box-pic">
-                <img src="Images/Helldivers.jpg">
-            </div>
-            <div class="project-box-space"/>
-                <div class="project-title">
-                    Racquetball App
+
+    <div class="projects-container" style="text-align: center;" id="projects">
+        <div class="title" style="display: block; padding-bottom: 100px;">Projects</div>
+        <div class="project-desc-container">
+            <div class="project-box">
+                <div class="project-box-pic">
+                    <video src="videos/Scheduler.mp4" autoplay controls muted>
+                </div>
+                <div class="project-box-space">
+                    <div class="project-title">
+                        Racquetball App
+                    </div>
+                </div>
+                <div class="project-box-desc">
+                    For my Senior project, I collaborated with three students to develop custom software for automating
+                    racquetball tournament management, including scheduling and scorekeeping. The project comprised four
+                    parts: a backend Django server, a web scraper for tournament data, an Android app for referees, and
+                    a scheduling app for managing tournaments. I was primarily responsible for the scheduling app, which
+                    enabled users to log in, schedule matches, and edit tournament data. Additionally, I managed client
+                    relations, conducted weekly meetings, and ensured we met our goals and delivered a product our
+                    client loved.
                 </div>
             </div>
-            <div class="project-box-desc"/>
-            As any true software engineer might be, I am an avid gamer. Growing up on Halo 2 and 3 on legendary
-            mode and participating in our weekly Super Smash Brothers tournaments, video games have become an
-            integral part of who I am today. Recently, my game of choice has been Helldivers 2 and
-            Counter-Strike, although some of my all-time favorites include Factorio (which I highly recommend if
-            you haven't heard of it) and Doom 2016. Beyond being an excellent way to pass time, video games have
-            taught me numerous valuable skills. These include a deep level of communication, effective teamwork,
-            patience, and leadership. The immersive and challenging nature of gaming has not only been enjoyable
-            but has also enriched my personal and professional development.
+            <div class="project-box black">
+
+            </div>
+            <div class="project-box black">
+
             </div>
         </div>
-        <div class="project-box black">
-            
-        </div>
-        <div class="project-box black">
-            
-        </div>
+
     </div>
     </div>
 
