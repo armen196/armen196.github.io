@@ -18,7 +18,7 @@
             <!-- <div class="title">Arman Yaralian</div> -->
             <div class="option" onclick="scrollToTarget('about-me', -60)">About Me</div>
             <div class="option" onclick="scrollToTarget('projects', -100)">Projects</div>
-            <div class="option">Education</div>
+            <div class="option" onclick="scrollToTarget('education', -100)">Education</div>
             <div class="option">Reach Me</div>
         </div>
 
@@ -105,7 +105,7 @@
     <div class="projects-container" style="text-align: center;" id="projects">
         <div class="title" style="display: block; padding-bottom: 100px;">Projects</div>
         <div class="project-desc-container">
-            <div class="project-box">
+            <div class="project-box" id="scheduler">
                 <div class="project-box-pic">
                     <video src="videos/Scheduler.mp4" autoplay controls muted>
                 </div>
@@ -124,14 +124,63 @@
                     client loved.
                 </div>
             </div>
-            <div class="project-box black">
-
+            <div class="project-box" id="cowboy">
+                <div class="project-box-pic">
+                    <video src="videos/cowboy.mp4" autoplay controls muted>
+                </div>
+                <div class="project-box-space">
+                    <div class="project-title">
+                        Cowboy Simulator
+                    </div>
+                </div>
+                <div class="project-box-desc">
+                    For our final game design project, I collaborated with three other students to develop a
+                    third-person game in Unity. The game’s premise may be quirky—you must collect all the spaghetti
+                    ingredients to save the town—but it features impressive gameplay elements. We implemented functional
+                    movement for various actions, reload animations, and adaptive AI to enhance the gaming experience.
+                    Our game also included a redesigned UI that allowed players to interact with NPCs and navigate
+                    through a pause and boot menu. Through this project, I gained proficiency in C# and Unity, while
+                    also honing essential soft skills like collaboration and communication.
+                </div>
             </div>
-            <div class="project-box black">
-
+            <div class="project-box" id="messenger">
+                <div class="project-box-pic">
+                    <video src="videos/Messenger.webm" autoplay controls muted>
+                </div>
+                <div class="project-box-space">
+                    <div class="project-title">
+                        Secure Messager
+                    </div>
+                </div>
+                <div class="project-box-desc">
+                    Although it may not appear sophisticated at first glance, this project is packed with features and
+                    will soon have its own GUI for official use by the university. This simple messaging application was
+                    designed for secure web communication within our IT department when handling sensitive information.
+                    It utilizes a centralized server located on campus, along with public-private key encryption and a
+                    key rotation feature. For this project, we collaborated closely with the cybersecurity club to
+                    ensure memory management and security were robust. The application also includes comprehensive
+                    moderator features for root users, such as message viewing, deletion, tracking, and editing, along
+                    with detailed information about each message.
+                </div>
             </div>
         </div>
 
+    </div>
+    <div class="education-container" id="education">
+        <h1 style="padding-top: 30px; padding-bottom: 80px;">Education</h1>
+        <div class="western-box">
+            <img id="western-image" class="orig" src="Images/Western.jpeg">
+            <div class="western-desc">
+                <h2>Throughout my time at Western, I took many classes to better my computer science knowledge. Form
+                    writing
+                    code to manage operating system resources to writing code to implement my own DBMS, Western taught
+                    me
+                    many valuable skills that I am exited to bring to the table. </h2>
+            </div>
+        </div>
+        <div class="class-desc-container">
+
+        </div>
     </div>
     </div>
 

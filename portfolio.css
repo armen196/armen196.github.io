@@ -1,10 +1,9 @@
-
 .quicksand {
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-  }
+}
 
 .black {
     background-color: black;
@@ -20,6 +19,15 @@
     font-family: "Quicksand", sans-serif;
 }
 
+h1 {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    color: black;
+    font-weight: 500;
+    font-size: 50px;
+    font-style: normal;
+}
+
 .title {
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
@@ -29,7 +37,7 @@
     font-style: normal;
     display: flex;
     padding: 20px;
-    height:80px;
+    height: 80px;
 }
 
 .sticky {
@@ -37,7 +45,7 @@
     top: 0;
 }
 
-.sticky + .background-container {
+.sticky+.background-container {
     margin-top: 80px;
 }
 
@@ -50,17 +58,17 @@
     justify-content: space-between;
     align-items: center;
     height: 50px;
-    width:50%;
+    width: 50%;
     padding: 20px;
-    
+
 }
 
 .background-container {
     height: 800px;
     width: 100%;
-    display: flex; 
+    display: flex;
     z-index: -5;
-    justify-content:center;
+    justify-content: center;
     position: relative;
     align-items: flex-end;
 }
@@ -71,9 +79,9 @@
 }
 
 .background {
-    
+
     /* top: 200px; */
-    position:absolute;
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -90,7 +98,7 @@
 .container img {
     width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit: cover;
 }
 
 .orange {
@@ -127,11 +135,11 @@
 
 
 .about-me-sec {
-   height: 600px;
-   justify-content: space-evenly;
-   width: 100%;
-   display: flex;
-   gap: 10px;
+    height: 600px;
+    justify-content: space-evenly;
+    width: 100%;
+    display: flex;
+    gap: 10px;
 }
 
 .about-me-desc {
@@ -141,7 +149,7 @@
     font-weight: 500;
     width: fit-content;
     height: fit-content;
-    position:relative;
+    position: relative;
     text-align: center;
     word-wrap: break-word;
     padding: 40px;
@@ -174,9 +182,10 @@
     display: flex;
     justify-content: space-evenly;
     position: relative;
-    
-    
+
+
 }
+
 .about-me-box-picture {
     background-color: bisque;
     width: 15%;
@@ -192,7 +201,7 @@
 }
 
 .about-me-box-picture img {
-    width:100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     transition: scale .3s ease, rotate .3s ease;
@@ -209,7 +218,9 @@
     align-items: center;
     padding-top: 80px;
     z-index: -5;
+    overflow: hidden;
 }
+
 .about-me-box-contents {
     width: 80%;
     border-radius: 15px;
@@ -229,7 +240,7 @@
     padding: 20px;
     font-family: "Quicksand", sans-serif;
     font-size: 20px;
-    font-weight:bolder;
+    font-weight: bolder;
     color: white;
 }
 
@@ -240,8 +251,9 @@
     height: max-content;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
+
 .option:hover {
-    box-shadow: inset 100px  0 0 #ffac41;
+    box-shadow: inset 100px 0 0 #ffac41;
     color: white;
 }
 
@@ -249,12 +261,18 @@
     width: 100%;
     height: fit-content;
     justify-content: center;
+    overflow: show;
+
+}
+
+.show {
+    overflow: visible;
 }
 
 .project-desc-container {
     width: 100%;
     height: fit-content;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     justify-items: center;
     align-items: center;
     display: flex;
@@ -266,6 +284,14 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    position: relative;
+    top: 800px;
+    transition: top .3s ease;
+}
+
+.show-t {
+
+    top: 0px;
 }
 
 .project-box-pic {
@@ -275,7 +301,7 @@
 
 .project-box-space {
     width: 100%;
-    height:20%;
+    height: 20%;
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -286,23 +312,48 @@
     text-align: center;
     font-family: "Quicksand", sans-serif;
     font-size: 20px;
-    font-weight:bolder;
+    font-weight: bolder;
 }
 
 .project-box-desc {
     font-family: "Quicksand", sans-serif;
     font-size: 15px;
-    font-weight:bolder;
+    font-weight: bolder;
     border-radius: 15px;
     text-align: center;
     width: 100%;
-    height:100%;
+    height: 500;
     display: flex;
     box-sizing: border-box;
     padding: 40px;
-    background-color:blanchedalmond;
+    background-color: blanchedalmond;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
     transition: transform .2s ease;
+    line-height: 25px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+h2 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.project-box-desc::-webkit-scrollbar {
+    width: 12px;
+}
+
+.project-box-desc::-webkit-scrollbar-track {
+    background: blanchedalmond;
+    border-radius: 0px 15px 15px 0px;
+
+}
+
+.project-box-desc::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: white;
+
 }
 
 .project-box-desc:hover {
@@ -324,7 +375,7 @@
     border-radius: 15px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
     justify-content: center;
     transition: transform .2s ease;
@@ -334,7 +385,69 @@
     transform: scale(1.5);
 }
 
-.example-class {
-    color: blueviolet;
+.education-container {
+    width: 100%;
+    height: 2000px;
+    margin-top: 40px;
+    text-align: center;
+    background-color: aquamarine;
+    display: block;
 }
 
+.western-box {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    gap: 100px;
+    padding-bottom: 20px;
+}
+
+.western-box img {
+    width: 400px;
+    height: 400px;
+    background-color: aqua;
+    border-radius: 100%;
+    object-fit: cover;
+    position: relative;
+    transition: all .8s ease, right .8s ease, scale .2s ease;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.western-box img:hover {
+    scale: 1.2;
+    rotate: 10deg;
+}
+
+.western-desc {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.orig {
+    /* rotate: 360deg; */
+    right: 100%;
+    rotate: -360deg;
+}
+
+.show-western-image {
+    right: 0%;
+    rotate: 0deg;
+}
+
+.class-desc-container {
+    
+    display: block;
+    background-color: #ffac41;
+    width: 100%;
+    height: 50px;
+}
+
+.class-desc-box {
+    height: 40px;
+    width: 40px;
+    background-color: black;
+}
