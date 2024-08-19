@@ -13,6 +13,7 @@ let options = document.getElementsByClassName("option");
 var projectBoxes = document.querySelectorAll('.project-box');
 var projContainer = document.getElementsByClassName("projects-container");
 var westernImage = document.getElementById("western-image");
+var classDescBoxes = document.querySelectorAll('.class-desc-box');
 window.onscroll = function () {
     if (window.scrollY > stick) {
         navBar.classList.add("sticky")
@@ -61,6 +62,22 @@ window.onscroll = function () {
         westernImage.classList.remove("show-western-image");
     }
 }
+
+function swayBoxes() {
+    const timeToAnimate = 1000;
+    classDescBoxes.forEach(box => {
+        if (box.classList.contains("left-j")) {
+            box.classList.remove("left-j");
+            box.classList.add("right-j");
+        }
+        else {
+            box.classList.remove("right-j");
+            box.classList.add("left-j");
+
+        }
+    });
+}
+
 function scrollToTarget(target, adj = 0) {
     //document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
     const yOffset = 200;
@@ -71,3 +88,4 @@ function scrollToTarget(target, adj = 0) {
     });
 }
 setInterval(swap, 6000);
+setInterval(swayBoxes, 5000);
