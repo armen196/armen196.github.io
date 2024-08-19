@@ -338,6 +338,19 @@ h2 {
     font-family: "Quicksand", sans-serif;
     font-size: 15px;
     font-weight: bolder;
+    padding: 20px;
+}
+
+h3 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+h4 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 10px;
+    font-weight: 200;
 }
 
 .project-box-desc::-webkit-scrollbar {
@@ -445,8 +458,6 @@ h2 {
     width: 100%;
     height: max-content;
     justify-content: space-around;
-    
-    
 }
 
 .class-desc-box {
@@ -455,17 +466,31 @@ h2 {
     border-radius: 15px;
     background-color: blanchedalmond;
     position: relative;
-    transition: left 5s ease-in-out, transform 5s ease; /* Transition left and transform */
+    transition: left 5s ease-in-out, transform 5s ease;
+    display: flex;
+    overflow: hidden;
+}
+
+.class-desc-box-desc {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.class-desc-box img {
+    object-fit: cover;
+    width: 30%;
+    height: 100%;
 }
 
 .left-j {
-    left: -40px; /* Moves the box to the right by 40px */
-    transform: rotate(20deg); /* Rotate 20 degrees */
+    left: -40px;
+    transform: rotate(20deg);
 }
 
 .right-j {
-    left: 100px; /* Moves the box further to the right by 200px */
-    transform: rotate(-20deg); /* Rotate -20 degrees */
+    left: 100px;
+    transform: rotate(-20deg);
 }
 
 .class-desc-box:hover {
@@ -474,5 +499,4 @@ h2 {
     scale: 2;
     left: 0px;
     rotate: 0deg;
-    
 }
