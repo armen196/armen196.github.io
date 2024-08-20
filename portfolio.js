@@ -73,7 +73,6 @@ function swayBoxes() {
         else {
             box.classList.remove("right-j");
             box.classList.add("left-j");
-
         }
     });
 }
@@ -87,5 +86,6 @@ function scrollToTarget(target, adj = 0) {
         behavior: 'smooth'
     });
 }
+
 setInterval(swap, 6000);
 setInterval(swayBoxes, 5000);
