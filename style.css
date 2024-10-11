@@ -58,7 +58,16 @@ h3 {
     justify-content: space-around;
 }
 
-video {
+video, iframe {
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+}
+
+iframe {
     width: 30%;
     height: 100%;
     object-fit: cover;
@@ -106,6 +115,7 @@ video {
         border-radius: 10px;
         border: 1px black solid;
         box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.3);
+        z-index: 10;
     }
 
     .center-flex {
