@@ -92,7 +92,7 @@ function changeDesc(direction) {
         curDesc.style.opacity = 0;
         curDesc.style.left = (direction) ? "-100%" : "100%";
         curDesc.classList.remove("move-left");
-        i = (direction) ? i+=1 : i-=1;
+        i = (direction) ? i += 1 : i -= 1;
         if (i == -1) i = descLen - 1;
         curTitle.textContent = descriptions[i % descLen].title;
         curDesc.textContent = descriptions[i % descLen].desc;
@@ -106,6 +106,35 @@ function changeDesc(direction) {
     }, 300);
 }
 
+const toStore = document.getElementById('projects');
+const original = toStore.innerHTML;
+function swapOrderForMobile() {
+    const screenWidth = window.innerWidth; // Or however you are determining screen width
+    const MOBILE_WIDTH = 768; // Example mobile width threshold
+
+    if (screenWidth <= MOBILE_WIDTH) {
+        const boxesToSwap = Array.from(document.getElementsByClassName("project-box-container"));
+        boxesToSwap.forEach((box) => {
+            console.log("making swap");
+            const video = box.querySelector('video');
+            const desc = box.querySelector('.vert-container');
+
+            // Remove and reorder elements
+            box.removeChild(video);
+            box.removeChild(desc);
+            box.appendChild(video);  // Append video first
+            box.appendChild(desc);   // Append description next
+        });
+    } else {
+        // Restore the original layout by resetting the body's innerHTML
+        const toChangeBack = document.getElementById('projects');
+        toChangeBack.innerHTML = original;
+    }
+}
+updateScreenWidth();
+swapOrderForMobile();
+
 carousel();
 window.addEventListener('resize', updateScreenWidth);
+window.addEventListener('resize', swapOrderForMobile);
 
