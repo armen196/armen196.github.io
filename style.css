@@ -2,10 +2,46 @@
     font-family: "Libre Baskerville", serif;
 }
 
+:root {
+    --background: #fff7df;
+    --item-box: #fffbef;
+    --object: #b3a885;
+    --desc: #ffe7be;
+}
+
 html {
     font-size: 16px;
     justify-content: center;
     align-items: center;
+    height: 10000px;
+    background-color: var(--background);
+}
+
+h1 {
+    font-size: clamp(10px, 10vw, 100px);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 10;
+    text-align: center;
+    transition: left .2s ease;
+    left: 0;
+    right: 0;
+    position: relative;
+}
+
+h2 {
+    font-weight: 100;
+    padding: 20px;
+    left: 0;
+    right: 0;
+    position: relative;
+    transition: left .2s ease;
+}
+
+
+
+.blue {
+    color: blue;
 }
 
 @media (max-width: 768px) {
@@ -19,7 +55,7 @@ html {
         height: 40px;
         width: 40px;
         border-radius: 10px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         position: relative;
         display: flex;
         flex-direction: column;
@@ -27,28 +63,128 @@ html {
         align-items: center;
     }
 
-    .nav-bar::before {
-        content: '';
+    .bar {
+        width: 80%;
+        height: 2px;
         background-color: black;
-        width: 70%;
-        height: 3px;
-        border-radius: 20px;
+        border-radius: 10px;
     }
 
-    .nav-bar::after {
-        content: '';
-        background-color: black;
-        width: 70%;
-        height: 3px;
-        border-radius: 20px;
-
+    .menu-items {
+        position: absolute;
+        top: 120px;
+        width: 150px;
+        right: 20px;
+        transition: all ease-in-out .2s;
+        transform-origin: top;
+        transform: scaleY(1);
+        overflow: hidden;
+        background-color: var(--desc);
+        border-radius: 10px;
+        border: 1px black solid;
+        box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.3);
     }
 
-    
+    .center-flex {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        /* padding-top: 100px;
+        padding-bottom: 100px; */
+    }
+
+
+    .column-center-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 
     .nav-bar-item {
+        border-bottom: 1px solid black;
+        padding: 30px;
+
+        text-align: center;
+    }
+
+    .hide {
+        transform: scaleY(0);
+        transition: transform ease-in-out .2s;
+    }
+
+    .show {
+        height: max-content;
+    }
+
+    .about-me-desc {
+
+        width: 80%;
+        /* height: 600px; */
+        
+        background-color: var(--object);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-align: end;
+        align-self: normal;
+        box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        height: auto;
+        transition: all .2s ease;
+    }
+
+    .about-me-desc-img-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+        border-radius: 10px 10px 10px 10px;
+
+    }
+
+    h1 {
         
     }
+
+    h2 {
+        padding: 0;
+    }
+
+    .text-wrapper {
+        width: 80%;
+        font-size: 10px;
+        padding-bottom: 20px;
+        align-self: center;
+        height: max-content;
+        
+    }
+
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 10px;
+        height: 1px;
+        width: 1px;
+        position: relative;
+        bottom: 150px;
+        transition: transform .1s ease-in-out;
+    }
+    
+
+    .center-flex {
+        
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: end;
+        justify-content: space-around;
+        
+        padding-bottom: 100px;
+    }
+
 }
 
 @media (min-width: 769px) {
@@ -77,31 +213,119 @@ html {
         transition: width ease-in-out, .2s;
     }
 
+    .menu-items {
+        position: sticky;
+        top: 20;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
     .nav-bar-item:hover::after {
         width: 100%;
     }
+
+    .about-me-desc {
+
+        width: 80%;
+        height: 600px;
+        background-color: var(--object);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        text-align: end;
+        align-items: center;
+        box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+
+    }
+
+    .about-me-desc-img-container {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+        border-radius: 0 10px 10px 0;
+
+    }
+
+    .text-wrapper {
+        max-height: 100%;
+        width: 50%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .text-wrapper::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .text-wrapper::-webkit-scrollbar-track {
+
+        border-radius: 0px 15px 15px 0px;
+
+    }
+
+    .text-wrapper::-webkit-scrollbar-thumb {
+        border-radius: 15px;
+        background: white;
+
+    }
+
+    .center-flex {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .arrow {
+        border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 15px;
+        height: 20px;
+        width: 20px;
+        transition: transform .1s ease-in-out;
+        
+    }
+
+
 }
 
-.center-flex {
-    display: flex;
-    justify-content: center;
+
+
+.right {
+
+    rotate: -45deg;
+
+}
+
+.left {
+    rotate: 135deg;
+}
+
+.move-left {
+    left: 100%;
+}
+
+.move-right {
+    right: 100%;
+}
+
+.arrow:hover {
+    transform: scale(2);
 }
 
 
+.about-me-desc-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 
-
-
-
-
-h1 {
-    font-size: clamp(10px, 10vw, 100px);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-weight: 10;
-    text-align: center;
-}
-
-h2 {
-    font-weight: 100;
+    position: relative;
 
 }

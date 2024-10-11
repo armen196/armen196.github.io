@@ -13,18 +13,50 @@
     <title>Test Website</title>
 </head>
 
-<div class="title-bar">
-    <h1>Hello World</h1>
+<body>
+    <div class="title-bar">
+        <h1>Hello World</h1>
+        <div class="column-center-flex">
+            <div class="nav-bar" onclick="openMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
 
 
-    <div class="nav-bar" onclick="openMenu()">
+    <div class="menu-items hide" id="menuNav">
         <div class="nav-bar-item">Item 1</div>
         <div class="nav-bar-item">Item 2</div>
         <div class="nav-bar-item">Item 3</div>
         <div class="nav-bar-item">Item 4</div>
     </div>
-</div>
 
 
+    <div class="center-flex">
+        <div class="arrow left" onclick="changeDesc(false)"></div>
+        <div class="about-me-desc">
+            <div class="text-wrapper">
+                <h1 id="curTitle" style="position: relative;font-size: clamp(10px, 10vw, 50px);">asdf</h1>
+                <h2 id="curDesc">
+                    Original
+                </h2>
+            </div>
+
+            <div class="about-me-desc-img-container">
+                <img class="img" src="PortfolioPics/Everyone.jpg">
+                <img class="img" src="PortfolioPics/Forrest.jpg">
+                <img class="img" src="PortfolioPics/GrampsDinner.jpg">
+            </div>
+        </div>
+        <div onclick="changeDesc(true)" class="arrow right"></div>
+    </div>
+
+    <div class="center-flex">
+        <h1>asdf</h1>
+    </div>
+
+</body>
 
 </html>
