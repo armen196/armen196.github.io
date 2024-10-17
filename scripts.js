@@ -21,21 +21,33 @@ descriptions.push(new Description(
 
 var screenWidth = 0;
 const MOBILE_WIDTH = 768;
+var isMobile = false;
 function openMenu() {
+    console.log("open menu...");
     if (screenWidth <= MOBILE_WIDTH) {
         console.log("Open menu clicked, screen width: " + screenWidth);
         const menu = document.getElementById('menuNav');
-        if (menu.classList.contains('hide')) {
-            menu.classList.remove('hide');
+        console.log("Right: " + menu.style.right);
+        if (menu.style.right != "0px") {
+            menu.style.right = "0px";
         } else {
-            menu.classList.add('hide');
+            menu.style.right = "-200px";
         }
     }
 }
 
 function updateScreenWidth() {
-    screenWidth = window.innerWidth;
 
+    screenWidth = window.innerWidth;
+    if (screenWidth <= MOBILE_WIDTH)
+        isMobile = true;
+    else
+        isMobile = false;
+    const el = document.getElementsByClassName('sliding-box-card 1')[0];
+    const carPhoto = document.getElementsByClassName('img')[0];
+    classBoxWidth = parseFloat(getComputedStyle(el).width);
+    imageWidth = parseFloat(getComputedStyle(carPhoto).width);
+    console.log("Image Width: " + imageWidth);
 }
 
 function shiftArrayLeft(arr) {
@@ -45,27 +57,25 @@ function shiftArrayLeft(arr) {
     return arr;
 }
 
+var imgWidth = 0;
 function carousel() {
-    let photos = Array.from(document.getElementsByClassName("img"));
-    let container = document.querySelector('.about-me-desc-img-container');
-
-
-    arrLen = photos.length;
-    console.log(photos);
-    let position = 0;
-    const intervalId = setInterval(() => {
-        position -= .05;
-        photos.forEach((photo, index) => {
-            photo.style.left = (position) + "%";
-            if (position <= -100) {
-                const firstPhoto = photos.shift(); // Remove the first image from the array
-                photos.push(firstPhoto);
-                position = 0;
-                container.removeChild(photos[2]);
-                container.appendChild(photos[2]);
-            }
-        })
-    }, 5);
+    const photoContainer = document.getElementsByClassName('about-me-desc-img-container')[0];
+    const photos = Array.from(photoContainer.getElementsByClassName('img'));
+    var pos = 0;
+    function animate() {
+        pos -= 1;
+        photoContainer.style.left = pos;
+        if (pos <= -1 * imageWidth) {
+            pos = 0;
+            photoContainer.style.left = 0;
+            photoContainer.removeChild(photos[0]);
+            photoContainer.appendChild(photos[0]);
+            const toShift = photos.shift();
+            photos.push(toShift);
+        }
+        requestAnimationFrame(animate);
+    }
+    animate();
 }
 
 const curTitle = document.getElementById('curTitle');
@@ -108,12 +118,16 @@ function changeDesc(direction) {
 
 const toStore = document.getElementById('projects');
 const original = toStore.innerHTML;
+var changed = false;
 function swapOrderForMobile() {
-    const screenWidth = window.innerWidth; // Or however you are determining screen width
-    const MOBILE_WIDTH = 768; // Example mobile width threshold
-
-    if (screenWidth <= MOBILE_WIDTH) {
+    const screenWidth = window.innerWidth;
+    const MOBILE_WIDTH = 768;
+    if (screenWidth <= MOBILE_WIDTH && !changed) {
+        changed = true;
+        const menuNav = document.getElementById('menuNav');
+        menuNav.insertAdjacentHTML('afterbegin', '<div class="x" onclick="openMenu()">&#10540</div>')
         const boxesToSwap = Array.from(document.getElementsByClassName("project-box-container"));
+        const certCont = Array.from(document.getElementsByClassName('container cert-cont'));
         boxesToSwap.forEach((box) => {
             console.log("making swap");
             const video = box.querySelector('video');
@@ -122,8 +136,21 @@ function swapOrderForMobile() {
             // Remove and reorder elements
             box.removeChild(video);
             box.removeChild(desc);
-            box.appendChild(video);  // Append video first
-            box.appendChild(desc);   // Append description next
+            box.appendChild(video);
+            box.appendChild(desc);
+        });
+        certCont.forEach((box) => {
+            const img = box.querySelector('a');
+            const desc = box.querySelector('div');
+            const h2 = desc.querySelector('h2');
+            desc.style.display = 'block';
+            desc.style.textAlign = 'center';
+
+            h2.style.width = '100%';
+            box.removeChild(img);
+            box.removeChild(desc);
+            box.appendChild(img);
+            box.appendChild(desc);
         });
     } else {
         // Restore the original layout by resetting the body's innerHTML
@@ -131,8 +158,85 @@ function swapOrderForMobile() {
         toChangeBack.innerHTML = original;
     }
 }
+
+function scrollToElement(id) {
+    const offset = (isMobile) ? -30 : -90;
+    const thingToScrollTo = document.getElementById(id).getBoundingClientRect().top + window.scrollY + offset;
+    window.scrollTo({ top: thingToScrollTo, behavior: 'smooth' });
+
+}
+
+
+var classBoxWidth = 0;
+function classCarousel() {
+    const containers = Array.from(document.getElementsByClassName("class container"));
+    containers.forEach((container) => {
+        const classBoxes = Array.from(container.getElementsByClassName('sliding-box-card'));
+        classBoxes.forEach((box) => {
+            const textToShow = box.getElementsByClassName('hidden-text')[0];
+            if (!isMobile) {
+                box.addEventListener("mouseover", function () {
+                    textToShow.style.height = "100px";
+                });
+                box.addEventListener("mouseout", function () {
+                    textToShow.style.height = "0";
+                });
+            } else {
+                box.addEventListener("click", function () {
+                    const isClicked = (box.style.height == '300px') ? true : false;
+                    if (isClicked) {
+                        box.style.height = '100px';
+                        textToShow.style.height = "0px";
+                    } else {
+                        box.style.height = '300px';
+                        textToShow.style.height = "200px";
+                    }
+
+                });
+            }
+
+        });
+    });
+    console.log("Width: " + classBoxWidth);
+    containers.forEach((container, index) => {
+        if (index % 2)
+            container.style.right = classBoxWidth / 2;
+        const classes = Array.from(container.getElementsByClassName('sliding-box-card'));
+        var pos = parseFloat(container.style.right);
+        function spin() {
+            //const cur = parseFloat(container.style.right + 20);
+            pos += 1;
+
+            container.style.right = pos;
+            if (pos >= classBoxWidth + 20) {
+                container.style.right = 0;
+                pos = 0;
+                const toChange = classes[0];
+
+                container.removeChild(toChange);
+                container.appendChild(toChange);
+                if (isMobile) {
+                    const ht = toChange.getElementsByClassName('hidden-text')[0];
+                    ht.style.height = '0px';
+                    toChange.style.height = '100px';
+
+                }
+                const temp = classes.shift();
+                classes.push(temp);
+
+            }
+            requestAnimationFrame(spin);
+        }
+        spin();
+    });
+
+}
+
+
+
 updateScreenWidth();
 swapOrderForMobile();
+classCarousel();
 
 carousel();
 window.addEventListener('resize', updateScreenWidth);

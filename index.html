@@ -26,11 +26,12 @@
     </div>
 
 
-    <div class="menu-items hide" id="menuNav">
-        <div class="nav-bar-item">Item 1</div>
-        <div class="nav-bar-item">Item 2</div>
-        <div class="nav-bar-item">Item 3</div>
-        <div class="nav-bar-item">Item 4</div>
+    <div class="menu-items" id="menuNav">
+        
+        <div class="nav-bar-item" onclick="(scrollToElement('project-tab'))">Projects</div>
+        <div class="nav-bar-item" onclick="(scrollToElement('education-tab'))">Education</div>
+        <div class="nav-bar-item" onclick="(scrollToElement('certifications-tab'))">Certifications</div>
+        <div class="nav-bar-item" onclick="(scrollToElement('reach-me-tab'))">Reach Me</div>
     </div>
 
 
@@ -44,18 +45,20 @@
                     Original
                 </h2>
             </div>
-
-            <div class="about-me-desc-img-container">
-                <img class="img" src="PortfolioPics/Everyone.jpg">
-                <img class="img" src="PortfolioPics/Forrest.jpg">
-                <img class="img" src="PortfolioPics/GrampsDinner.jpg">
+            <div class="img-cont">
+                <div class="about-me-desc-img-container">
+                    <img class="img" src="PortfolioPics/Everyone.jpg">
+                    <img class="img" src="PortfolioPics/Forrest.jpg">
+                    <img class="img" src="PortfolioPics/GrampsDinner.jpg">
+                </div>
             </div>
+
         </div>
         <div onclick="changeDesc(true)" class="arrow right"></div>
     </div>
 
 
-    <h1>Projects</h1>
+    <h1 id="project-tab">Projects</h1>
     <div id="projects">
         <div class="project-box-container">
             <video src="videos/Scheduler.mp4" id="video" autoplay controls muted></video>
@@ -92,7 +95,7 @@
         <div class="project-box-container">
             <video src="videos/Messenger.webm" id="video" autoplay controls muted></video>
             <div class="vert-container just-right" id="project-desc">
-                <h2 style="padding-top: 40px; font-weight: 600;">Secure Messager</h2>
+                <h2 style="padding-top: 40px; font-weight: 600;">Secure Messenger</h2>
                 <h3 style="width: 100%;">Although it may not appear sophisticated at first glance, this project is
                     packed with features and will soon have its own GUI for official use by the university. This simple
                     messaging application was designed for secure web communication within our IT department when
@@ -109,24 +112,358 @@
 
         <div class="project-box-container">
             <div class="vert-container" id="project-desc">
-                <h2 style="padding-top: 40px; font-weight: 600;">Cowboy Simulator</h2>
-                <h3 style="width: 100%;">For our final game design project, I collaborated with three other students to
-                    develop a third-person game in Unity. The game’s premise may be quirky—you must collect all the
-                    spaghetti ingredients to save the town—but it features impressive gameplay elements. We implemented
-                    functional movement for various actions, reload animations, and adaptive AI to enhance the gaming
-                    experience. Our game also included a redesigned UI that allowed players to interact with NPCs and
-                    navigate through a pause and boot menu. Through this project, I gained proficiency in C# and Unity,
-                    while also honing essential soft skills like collaboration and communication.
+                <h2 style="padding-top: 40px; font-weight: 600;">Corkboard App</h2>
+                <h3 style="width: 100%;">For this ongoing personal project, I developed a React Native application that
+                    connects with a locally hosted Django backend. The app aims to enhance communication and
+                    collaboration among roommates by providing a platform for posting on a communal board, dynamically
+                    creating and modifying lists, and assigning jobs or chores. Users can easily share ideas and
+                    reminders, while the Django server efficiently manages and stores
+                    client data, ensuring quick access and updates. This project not only emphasizes real-time
+                    collaboration but also enhances my skills in full-stack development by integrating a mobile front
+                    end with a robust backend system.
 
                 </h3>
             </div>
-            <iframe src="https://drive.google.com/file/d/1BLEWbl4M2ko_8EdYBgo1m9yzPBlIolnS/preview" width="100" height="100" allow="autoplay"></iframe>
+            <video src="videos/CorkBoard.mp4" class="special-video" id="video" autoplay controls muted></video>
         </div>
     </div>
 
-
-
+    <h1 id="education-tab">Education</h1>
+    <div class="container">
+        <img src="PortfolioPics/Western.png" alt="">
+        <h4 style="width: 60%;">Western Washington University (WWU) is a vibrant public institution located in
+            Bellingham, Washington,
+            committed to fostering student success and inclusive excellence. Established in 1893, WWU offers over 200
+            undergraduate programs and more than 40 graduate programs, ensuring a diverse and comprehensive academic
+            experience. The university prides itself on a strong community atmosphere, with over 250 student
+            organizations and clubs that encourage engagement and personal growth. Recognized as one of the top
+            master’s-granting institutions in the Pacific Northwest, WWU emphasizes hands-on learning, sustainability,
+            and a commitment to social responsibility, preparing students not just for careers but also for impactful
+            contributions to society. With a stunning campus nestled among natural beauty, Western invites students to
+            explore their passions and make meaningful waves in their academic and personal lives.</h4>
     </div>
+    </div>
+
+
+
+
+    <div style="width: 100%; overflow-x: hidden;">
+        <div class="class container" id="classContainer" tag="classes-container"
+            style="padding-top: 70px; padding-bottom: 20px;justify-content:baseline; width:fit-content; right: 0; position: relative; flex-direction: row;">
+            <div class="sliding-box-card 1" tag="class-card">
+                <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg" alt="">
+                <div id="text-wrap"
+                    style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                    <h4 style="padding: 0;">Probability/Statistical Inference</h4>
+                    <div class="hidden-text" style="height: 0; overflow: hidden;">
+                        <h5>
+                            This course covers fundamental concepts in probability and statistical inference, including
+                            probability distributions and hypothesis testing.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="sliding-box-card 2" tag="class-card">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+                <div id="text-wrap"
+                    style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                    <h4 style="padding: 0;">Computer Systems I</h4>
+                    <div class="hidden-text" style="height: 0; overflow: hidden;">
+                        <h5>
+                            Explore the architecture of computer systems, covering hardware components, operating
+                            systems, and system software.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="sliding-box-card 3" tag="class-card">
+                <img src="https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+                <div id="text-wrap"
+                    style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                    <h4 style="padding: 0;">Formal Languages & Functional Programming</h4>
+                    <div class="hidden-text" style="height: 0; overflow: hidden;">
+                        <h5>
+                            Delve into the theory of formal languages and the principles of functional programming,
+                            focusing on syntax, semantics, and computation.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="sliding-box-card 4" tag="class-card">
+                <img src="https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+                <div id="text-wrap"
+                    style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                    <h4 style="padding: 0;">Fundamentals of Data Science</h4>
+                    <div class="hidden-text" style="height: 0; overflow: hidden;">
+                        <h5>
+                            This course introduces data science concepts, including data manipulation, analysis, and
+                            visualization techniques.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="sliding-box-card 5" tag="class-card">
+                <img src="https://images.pexels.com/photos/17483848/pexels-photo-17483848/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-a-look-inside-how-ai-microchips-are-designed-it-was-created-by-champ-panupong-techawongthawon-as-part-of-the-v.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+                <div id="text-wrap"
+                    style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                    <h4 style="padding: 0;">Linear Optimization</h4>
+                    <div class="hidden-text" style="height: 0; overflow: hidden;">
+                        <h5>
+                            Gain insights into linear optimization techniques, focusing on solving problems using linear
+                            programming and its applications.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="sliding-box-card 6" tag="class-card">
+                <img src="https://images.pexels.com/photos/6238297/pexels-photo-6238297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="">
+                <div id="text-wrap"
+                    style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                    <h4 style="padding: 0;">Numerical Computation</h4>
+                    <div class="hidden-text" style="height: 0; overflow: hidden;">
+                        <h5>
+                            Explore numerical methods for solving mathematical problems, focusing on approximation,
+                            interpolation, and numerical integration.
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%;">
+            <div class="class container" id="classContainer" tag="classes-container"
+                style="padding-top: 0px; padding-bottom: 20px; justify-content:baseline; width:fit-content; right: 0; position: relative; flex-direction: row;">
+                <div class="sliding-box-card 7" tag="class-card">
+                    <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4" alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Analysis of Algorithms I</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                Study algorithm design, analysis, and complexity, with a focus on sorting, searching,
+                                and optimization techniques.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="sliding-box-card 8" tag="class-card">
+                    <img src="https://images.pexels.com/photos/117729/pexels-photo-117729.jpeg" alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Database Systems</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                This course covers database design, management, and querying, focusing on relational
+                                database systems and SQL.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="sliding-box-card 9" tag="class-card">
+                    <img src="https://images.pexels.com/photos/159299/graphic-design-studio-tracfone-programming-html-159299.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Object-Oriented Design</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                Delve into the principles of object-oriented design, covering encapsulation,
+                                inheritance, and polymorphism in software development.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="sliding-box-card 10" tag="class-card">
+                    <img src="https://images.pexels.com/photos/207580/pexels-photo-207580.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Secure Software Development</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                This course focuses on secure coding practices, vulnerability assessments, and
+                                strategies for developing robust software systems.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="sliding-box-card 11" tag="class-card">
+                    <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4" alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Computer Networks</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                Learn about network architectures, protocols, and security, emphasizing the design and
+                                implementation of computer networks.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="sliding-box-card 12" tag="class-card">
+                    <img src="https://images.unsplash.com/photo-1556899392-b740d7d67b77" alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Software Engineering</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                Explore software development methodologies, project management, and the software
+                                lifecycle from conception to deployment.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%;">
+            <div class="class container" id="classContainer" tag="classes-container"
+                style="padding-top: 0px; justify-content: baseline; width: fit-content; right: 0; position: relative; flex-direction: row;">
+
+                <div class="sliding-box-card 13" tag="class-card">
+                    <img src="https://images.pexels.com/photos/9071739/pexels-photo-9071739.jpeg" alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Game Programming</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                Learn the core principles of game development, covering design, mechanics, and the
+                                specific programming languages needed for games.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sliding-box-card 14" tag="class-card">
+                    <img src="https://images.unsplash.com/photo-1542831371-d531d36971e6" alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Operating Systems</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                Explore the fundamental concepts of operating systems, including process management,
+                                memory handling, and file systems.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sliding-box-card 15" tag="class-card">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Senior Project 2</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                Collaborate on a capstone project that brings together your cumulative knowledge and
+                                skills for a real-world solution.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sliding-box-card 16" tag="class-card">
+                    <img src="https://images.pexels.com/photos/159304/network-cable-ethernet-computer-159304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Computer Networks I</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                Study network protocols, architectures, and the inner workings of the Internet as part
+                                of this introduction to networking.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sliding-box-card 17" tag="class-card">
+                    <img src="https://images.pexels.com/photos/17483910/pexels-photo-17483910/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-the-concept-of-artificial-general-intelligence-agi-it-was-created-by-artist-domhnall-malone-as-part-of-th.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Analysis of Algorithms II</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                Delve deeper into algorithm analysis, learning about complexity, optimization
+                                strategies, and advanced data structures.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sliding-box-card 18" tag="class-card">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+                    <div id="text-wrap"
+                        style="display: flex; flex-direction: column; width: 40%; align-items: center; justify-content: space-around;">
+                        <h4 style="padding: 0;">Senior Project 3</h4>
+                        <div class="hidden-text" style="height: 0; overflow: hidden;">
+                            <h5>
+                                Complete your capstone by delivering a high-quality solution, focusing on development
+                                and final presentation.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <h1 id="certifications-tab">Certifications</h1>
+    <div id="cert-cont" class="container cert-cont">
+        <a id="img" href="https://coursera.org/verify/83K9KDI63Y7O" target="_blank"
+            style="display: flex; justify-content: space-around">
+            <img src="PortfolioPics/tech_support_cert.jpg"
+                style="border-radius: 0px; aspect-ratio: 0; max-width: none; width: 50%;" />
+        </a>
+        <div id="desc"
+            style="display: flex; flex-direction: column; justify-content: space-around; max-width: 70%; min-width: 300px; text-align: start; padding-top: 40px; padding-bottom: 40px;">
+            
+            <h2 style="padding: 0; border-bottom: 1px black solid; width: 75%;">Technical Support
+                Fundamentals - Coursera</h2>
+            <h4 style="padding: 0; padding-top: 20px; text-align: inherit; font-size: small;">This course provided a comprehensive
+                introduction to IT support, covering
+                the
+                foundational concepts of
+                hardware, software, networking, and troubleshooting. Through hands-on exercises and practical scenarios,
+                I
+                gained skills in diagnosing and resolving technical issues, configuring operating systems, managing
+                system
+                files, and utilizing industry-standard tools. The course emphasized problem-solving techniques and best
+                practices for customer support, preparing me to effectively handle a wide range of IT challenges in a
+                professional environment.</h4>
+        </div>
+    </div>
+    <div id="cert-cont" class="container cert-cont">
+        <div id="desc"
+            style="justify-content: space-around; max-width: 70%; min-width: 300px; text-align: end; padding-top: 40px; padding-bottom: 40px; display: flex; flex-direction: column; align-items: end;">
+            <h2 style="border-bottom: 1px black solid; width: 75%; padding: 0; ">Technical Support
+                Fundamentals - Coursera</h2>
+            <h4 style="text-align: inherit; padding: 0; padding-top: 20px; font-size: small;">This course provided a comprehensive
+                introduction to IT support, covering
+                the
+                foundational concepts of
+                hardware, software, networking, and troubleshooting. Through hands-on exercises and practical scenarios,
+                I
+                gained skills in diagnosing and resolving technical issues, configuring operating systems, managing
+                system
+                files, and utilizing industry-standard tools. The course emphasized problem-solving techniques and best
+                practices for customer support, preparing me to effectively handle a wide range of IT challenges in a
+                professional environment.</h4>
+        </div>
+        <a id="img" href="https://coursera.org/verify/83K9KDI63Y7O" target="_blank"
+            style="display: flex; justify-content: space-around;">
+            <img src="PortfolioPics/tech_support_cert.jpg"
+                style="border-radius: 0px; aspect-ratio: 0; max-width: none; width: 50%;" />
+        </a>
+    </div>
+
+    <h1 id="reach-me-tab">Reach Me</h1>
 
 </body>
 

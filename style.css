@@ -1,5 +1,6 @@
 * {
     font-family: "Libre Baskerville", serif;
+    margin: 0;
 }
 
 :root {
@@ -18,7 +19,9 @@ html {
 }
 
 h1 {
-    font-size: clamp(10px, 10vw, 100px);
+    
+    font-size: clamp(0vw, 7vw, 100vw);
+    
     padding-top: 20px;
     padding-bottom: 20px;
     font-weight: 10;
@@ -44,7 +47,26 @@ h3 {
     font-weight: 100;
 }
 
+h4 {
+    font-weight: 100;
+    padding: 20px;
+    left: 0;
+    right: 0;
+    position: relative;
+    transition: left .2s ease;
+    text-align: center;
+}
 
+h5 {
+    font-weight: 100;
+    font-size: smaller;
+    text-align: center;
+}
+
+.hidden-text {
+    transition: height ease .2s;
+    border-bottom: black 1px solid;
+}
 
 .blue {
     color: blue;
@@ -58,29 +80,103 @@ h3 {
     justify-content: space-around;
 }
 
-video, iframe {
-    width: 30%;
-    height: 100%;
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
     object-fit: cover;
-    display: block;
-    border-radius: 15px;
+    align-items: center;
+
+}
+
+.container img {
+    border-radius: 100%;
+    max-width: 30%;
+    aspect-ratio: 1 / 1;
+    transition: all .2s ease;
+    object-fit: cover;
+    
     box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
 }
 
-iframe {
-    width: 30%;
-    height: 100%;
+.container img:hover {
+    transform: scale(1.1) rotate(15deg);
+
+}
+
+video {
+
+    /* height: 70%; Ensure the height scales with the width */
+    max-height: 100%;
     object-fit: cover;
-    display: block;
+    /* Cover ensures the video maintains its aspect ratio */
     border-radius: 15px;
     box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+    flex-shrink: 1;
+    /* Allow the video to shrink within the container */
+    transition: all ease .2s;
+}
+
+video:hover {
+    transform: scale(1.1);
+}
+
+.sliding-box-card {
+    width: 400px;
+    height: 200px;
+    outline: gray 1px solid;
+    outline-offset: -1px;
+    background-color: var(--item-box);
+    border-radius: 15px;
+    /* box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.3); */
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 20px;
+    position: relative;
+    right: 0;
+    transition: all ease .2s;
+    transform-origin: bottom;
+    font-size: 80%;
+}
+
+.sliding-box-card img {
+    width: 30%;
+    box-shadow: none;
+}
+
+.img-cont {
+    width: 50%;
+    overflow: hidden;
+    
 }
 
 @media (max-width: 768px) {
+    .sliding-box-card {
+        width: 200px;
+        height: 100px;
+    }
+
+
+
     .title-bar {
+        position: sticky;
+        background-color:#fff7df;
+        z-index: 100;
+        top: 0;
         display: flex;
         justify-content: space-around;
         align-items: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .container img {
+        max-width: 50%;
     }
 
     .nav-bar {
@@ -103,19 +199,29 @@ iframe {
     }
 
     .menu-items {
-        position: absolute;
-        top: 120px;
-        width: 150px;
-        right: 20px;
+        position: fixed;
+        z-index: 1001;
+        width: 200px;
+        height: 100%;
+        right: -200px;
+        top: 0;
         transition: all ease-in-out .2s;
-        transform-origin: top;
+        transform-origin:right;
         transform: scaleY(1);
-        overflow: hidden;
-        background-color: var(--desc);
-        border-radius: 10px;
-        border: 1px black solid;
+        background-color: var(--background);
         box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.3);
-        z-index: 10;
+    }
+
+    .x {
+        font-size: 40;
+        content: "\292C";
+        display: flex;
+        text-align: center;
+        height: 40px;
+        justify-content: flex-start;
+        padding-right: 20px;
+        padding-left: 20px;
+        align-items: center;
     }
 
     .center-flex {
@@ -172,12 +278,10 @@ iframe {
         width: 100%;
         height: 100%;
         display: flex;
-        overflow: hidden;
-        border-radius: 10px 10px 10px 10px;
 
+        position: relative;
+        border-radius: 0px 0px 15px 15px;
     }
-
-    h1 {}
 
     h2 {
         padding: 0;
@@ -218,15 +322,6 @@ iframe {
 
     .project-box-container {
         display: flex;
-        width: 100%;
-        justify-content: space-around;
-        align-items: center;
-        text-align: left;
-
-    }
-
-    .project-box-container {
-        display: flex;
         flex-direction: column;
         width: 100%;
         justify-content: space-around;
@@ -243,9 +338,33 @@ iframe {
         width: 80%;
     }
 
+    .special-video {
+        width: 200px;
+    }
+
+    .class {
+        font-size: .75rem;
+    }
+
+    .hidden-text {
+        font-size: small;
+    }
+
+    .img-cont {
+        width: 100%;
+    }
+
 }
 
 @media (min-width: 769px) {
+    .img-cont {
+        border-radius: 0px 10px 10px 0px;
+    }
+    .sliding-box-card:hover {
+        transform: scale(1.2);
+        z-index: 2;
+    }
+
     .nav-bar {
         flex-direction: row;
         justify-content: space-evenly;
@@ -273,11 +392,15 @@ iframe {
 
     .menu-items {
         position: sticky;
-        top: 20;
+        top: 0;
         display: flex;
         width: 100%;
         flex-direction: row;
         justify-content: space-around;
+        background-color: var(--background);
+        z-index: 100;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     .nav-bar-item:hover::after {
@@ -300,11 +423,12 @@ iframe {
     }
 
     .about-me-desc-img-container {
-        width: 50%;
+        width: 100%;
         height: 100%;
         display: flex;
-        overflow: hidden;
-        border-radius: 0 10px 10px 0;
+        
+        position: relative;
+        border-radius: 100px;
 
     }
 
@@ -331,7 +455,7 @@ iframe {
 
     }
 
-    
+
 
     .center-flex {
         display: flex;
@@ -361,7 +485,7 @@ iframe {
         align-items: center;
         text-align: left;
         padding-bottom: 80px;
-
+        height: 400px;
     }
 
     .vert-container {
@@ -377,6 +501,10 @@ iframe {
         align-items: end;
     }
 
+    video {
+        width: fit-content;
+        max-width: 30%;
+    }
 }
 
 /* .project-box {
@@ -419,11 +547,11 @@ iframe {
 }
 
 
+
 .about-me-desc-img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     position: relative;
 
 }
