@@ -160,10 +160,10 @@ function swapOrderForMobile() {
 }
 
 function scrollToElement(id) {
-    const offset = (isMobile) ? -30 : -90;
+    const offset = (isMobile) ? -60 : -90;
     const thingToScrollTo = document.getElementById(id).getBoundingClientRect().top + window.scrollY + offset;
     window.scrollTo({ top: thingToScrollTo, behavior: 'smooth' });
-
+    if (isMobile) openMenu();
 }
 
 

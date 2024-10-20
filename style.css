@@ -358,11 +358,25 @@ video:hover {
         height: 1500px;
         width: 100%;
         flex-direction: column;
-        background-color: aqua;
         justify-content: space-around;
         font-size: small;
         align-items: center;
     }
+    .myface {
+        max-height: 100%;
+        max-width: 100%;
+        height: 400px;
+        width: 80%;
+        object-fit: cover;
+
+    }
+
+    /* .about-me-container img {
+        width: 30%;
+        aspect-ratio: 1/2; 
+        object-fit: cover; 
+        max-height: 600px;
+    } */
     .resume-cont {
         width: 100%;
 
@@ -370,6 +384,19 @@ video:hover {
 }
 
 @media (min-width: 769px) {
+    .info {
+        transition: transform .2s ease;
+        box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+    }
+    .info:hover {
+        transform: scale(1.2);
+    }
+    .myface {
+        width: 30%; 
+        aspect-ratio: 1/2; 
+        object-fit: cover; 
+        max-height: 600px;
+    }
     .resume-cont {
         width: 30%;
         
@@ -379,7 +406,6 @@ video:hover {
         height: 600px;
         width: 100%;
         flex-direction: row;
-        background-color: aqua;
         justify-content: space-around;
         align-items: center;
     }
