@@ -240,5 +240,5 @@ classCarousel();
 
 carousel();
 window.addEventListener('resize', updateScreenWidth);
-window.addEventListener('resize', swapOrderForMobile);
+//window.addEventListener('resize', swapOrderForMobile);
 
