@@ -61,6 +61,7 @@ var imgWidth = 0;
 function carousel() {
     const photoContainer = document.getElementsByClassName('about-me-desc-img-container')[0];
     const photos = Array.from(photoContainer.getElementsByClassName('img'));
+    
     var pos = 0;
     function animate() {
         pos -= 1;
